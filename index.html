@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0d1126">
+  <title>Love Check 💗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating decorative hearts -->
+  <div class="float-heart heart-1">♡</div>
+  <div class="float-heart heart-2">♥</div>
+  <div class="float-heart heart-3">♡</div>
+
+  <main class="app">
+
+    <!-- 01 OPENING -->
+    <section class="screen active" id="opening">
+      <div class="opening-card">
+        <div class="tiny-label">💌 SOMETHING FOR YOU</div>
+
+        <div class="envelope" id="envelope">💌</div>
+
+        <p class="from-line">
+          <span id="senderOpening">Someone</span> made this for you...
+        </p>
+
+        <h1>Do You Really<br><span>Know Me?</span></h1>
+
+        <p class="opening-copy">
+          15 questions. No cheating.<br>
+          Let's see seberapa kenal mas sama asa. 👀
+        </p>
+
+        <button class="main-btn" id="openBtn">OPEN LOVE CHECK 💗</button>
+
+        <p class="tiny-note">Headphones recommended 🎧</p>
+      </div>
+    </section>
+
+    <!-- 02 QUIZ -->
+    <section class="screen" id="quiz">
+      <div class="quiz-header">
+        <div class="progress-wrap">
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="progress-info">
+            <span id="questionCounter">01 / 15</span>
+            <span>LOVE CHECK 💗</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-card">
+        <div class="question-tag" id="questionTag">QUESTION 01</div>
+        <h2 id="questionText"></h2>
+        <div class="answers" id="answers"></div>
+      </div>
+
+      <div class="music-pill">
+        <button id="musicBtn" aria-label="Play atau pause musik">🎵</button>
+        <span id="musicStatus">Music on</span>
+      </div>
+    </section>
+
+    <!-- 03 CALCULATING -->
+    <section class="screen" id="calculating">
+      <div class="loading-card">
+        <div class="loading-heart">💗</div>
+        <div class="tiny-label">WAIT A SECOND...</div>
+        <h2>Checking your answers<span class="dots"></span></h2>
+        <p id="loadingText">Ngitung seberapa kenal mas sama asa...</p>
+        <div class="loading-track">
+          <div class="loading-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 RESULT -->
+    <section class="screen" id="result">
+      <div class="result-card">
+        <div class="tiny-label">🚦 YOUR LOVE CHECK RESULT</div>
+
+        <p class="result-greeting" id="resultGreeting">Okay...</p>
+
+        <div class="score-circle" id="scoreCircle">
+          <div>
+            <strong id="score">87%</strong>
+            <span>YOU KNOW ME</span>
+          </div>
+        </div>
+
+        <div class="result-fraction" id="resultFraction">13 / 15 correct</div>
+
+        <h2 id="resultTitle">The “I Actually Listen” Partner 💚</h2>
+        <p class="result-copy" id="resultCopy"></p>
+
+        <div class="result-stats">
+          <div>
+            <span>🧠 Memory</span>
+            <b id="memoryStat">90%</b>
+          </div>
+          <div>
+            <span>💗 Understanding</span>
+            <b id="understandingStat">86%</b>
+          </div>
+          <div>
+            <span>👀 Attention</span>
+            <b id="attentionStat">92%</b>
+          </div>
+        </div>
+
+        <button class="main-btn" id="messageBtn">WAIT... THERE'S MORE 💌</button>
+      </div>
+    </section>
+
+    <!-- 05 SECRET MESSAGE -->
+    <section class="screen" id="message">
+      <div class="message-card">
+        <div class="tiny-label">💌 A LITTLE SOMETHING FROM <span id="senderLabel">SOMEONE</span></div>
+
+        <div class="photo-frame">
+          <img id="couplePhoto" src="assets/photo.jpg" alt="Foto pasangan">
+        </div>
+
+        <p class="message-intro">Okay... now open this slowly. 🥹</p>
+
+        <div class="letter">
+          <h2>For you, <span id="partnerMessageName">mas</span> 🤍</h2>
+          <p id="secretMessage"></p>
+          <div class="signature">— <span id="senderSignature">Someone</span> ♡</div>
+        </div>
+
+        <button class="main-btn" id="shareBtn">💬 SHARE RESULT</button>
+        <button class="ghost-btn" id="restartBtn">🔄 PLAY AGAIN</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Audio starts after user taps OPEN LOVE CHECK -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

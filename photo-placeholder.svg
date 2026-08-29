@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+<rect width="800" height="1000" fill="#171c38"/>
+<circle cx="400" cy="390" r="150" fill="#ff7eaa" opacity=".18"/>
+<text x="400" y="410" text-anchor="middle" font-family="Arial" font-size="90">💗</text>
+<text x="400" y="560" text-anchor="middle" font-family="Arial" font-size="28" fill="#ffc1d6">YOUR PHOTO</text>
+</svg>
