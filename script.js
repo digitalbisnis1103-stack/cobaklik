@@ -12,8 +12,8 @@ const CONFIG = {
     "Makasih ya udah selalu ada buat aku. Kadang kita ngeselin satu sama lain, kadang bikin ketawa sendiri, tapi dari sekian banyak orang, aku tetap seneng bisa ketemu kamu. 🤍",
 
   // Foto dan musik diletakkan di folder assets.
-  photo: "assets/photo.jpg",
-  music: "assets/music.mp3",
+  photo: "photo.jpg",
+  music: "music.mp3",
 
   // Kamu bisa mengganti kalimat opening.
   openingCopy:
