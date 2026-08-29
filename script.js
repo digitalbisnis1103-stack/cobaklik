@@ -262,40 +262,66 @@ function openMessage(){
   showScreen("message");
 }
 
-function startMusic(){
-  const audio = $("bgMusic");
+function startMusic() {
+  const audio = document.getElementById("bgMusic");
+
+  if (!audio) {
+    console.error("Audio bgMusic tidak ditemukan!");
+    return;
+  }
 
   audio.volume = 0.45;
+  audio.muted = false;
 
   audio.play()
     .then(() => {
       musicPlaying = true;
-      $("musicBtn").textContent = "🔊";
-      $("musicStatus").textContent = "Music on";
+
+      const musicBtn = document.getElementById("musicBtn");
+      const musicStatus = document.getElementById("musicStatus");
+
+      if (musicBtn) musicBtn.textContent = "🔊";
+      if (musicStatus) musicStatus.textContent = "Music on";
+
+      console.log("MUSIK BERHASIL DIPUTAR");
     })
     .catch((error) => {
-      console.log("Gagal memutar musik:", error);
       musicPlaying = false;
-      $("musicStatus").textContent = "Tap 🎵";
+
+      console.error("MUSIK GAGAL DIPUTAR:", error);
+
+      const musicStatus = document.getElementById("musicStatus");
+      if (musicStatus) {
+        musicStatus.textContent = "Tap 🎵";
+      }
     });
 }
 
-function toggleMusic(){
-  const audio = $("bgMusic");
 
-  if(musicPlaying){
+function toggleMusic() {
+  const audio = document.getElementById("bgMusic");
+
+  if (!audio) return;
+
+  if (musicPlaying) {
     audio.pause();
     musicPlaying = false;
+
     $("musicBtn").textContent = "🎵";
     $("musicStatus").textContent = "Music off";
-  }else{
-    audio.play().then(() => {
-      musicPlaying = true;
-      $("musicBtn").textContent = "🔊";
-      $("musicStatus").textContent = "Music on";
-    }).catch(() => {
-      toast("Browser belum mengizinkan musik. Tap sekali lagi 🎵");
-    });
+
+  } else {
+    audio.play()
+      .then(() => {
+        musicPlaying = true;
+
+        $("musicBtn").textContent = "🔊";
+        $("musicStatus").textContent = "Music on";
+      })
+      .catch((error) => {
+        console.error("Gagal play musik:", error);
+        toast("Tap tombol musik sekali lagi 🎵");
+      });
   }
 }
 
