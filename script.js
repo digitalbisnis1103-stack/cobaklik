@@ -264,17 +264,20 @@ function openMessage(){
 
 function startMusic(){
   const audio = $("bgMusic");
-  audio.src = CONFIG.music;
+
   audio.volume = 0.45;
 
-  audio.play().then(() => {
-    musicPlaying = true;
-    $("musicBtn").textContent = "🔊";
-    $("musicStatus").textContent = "Music on";
-  }).catch(() => {
-    musicPlaying = false;
-    $("musicStatus").textContent = "Tap 🎵";
-  });
+  audio.play()
+    .then(() => {
+      musicPlaying = true;
+      $("musicBtn").textContent = "🔊";
+      $("musicStatus").textContent = "Music on";
+    })
+    .catch((error) => {
+      console.log("Gagal memutar musik:", error);
+      musicPlaying = false;
+      $("musicStatus").textContent = "Tap 🎵";
+    });
 }
 
 function toggleMusic(){
